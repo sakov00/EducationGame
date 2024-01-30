@@ -20,6 +20,7 @@ namespace Assets.Scripts.PlayerComponents
 
         private float horizontalInput;
         private float verticalInput;
+        private float interactInput;
         private bool allowDoubleJump;
         private Rigidbody2D _rigidbody2D;
         private Animator _animator;
@@ -108,5 +109,8 @@ namespace Assets.Scripts.PlayerComponents
 
         public void OnVerticalMovement(InputAction.CallbackContext context) =>
             verticalInput = context.ReadValue<float>();
+
+        public void OnInteract(InputAction.CallbackContext context) =>
+            hero.OnInteract(context);
     }
 }
