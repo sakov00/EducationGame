@@ -11,7 +11,7 @@ namespace Assets.Scripts.PlayerComponents
             var healthComponent = GetComponent<HealthComponent>();
             if (healthComponent != null)
             { 
-                healthComponent.ApplyDamage(damageValue);
+                healthComponent.GetDamage(damageValue);
             }
         }
     }

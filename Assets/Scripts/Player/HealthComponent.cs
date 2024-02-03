@@ -9,7 +9,7 @@ namespace Assets.Scripts.PlayerComponents
         [SerializeField] private UnityEvent onDamage;
         [SerializeField] private UnityEvent OnDie;
 
-        public void ApplyDamage(int damageValue)
+        public void GetDamage(int damageValue)
         {
             health -= damageValue;
             onDamage?.Invoke();

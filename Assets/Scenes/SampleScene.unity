@@ -1878,7 +1878,7 @@ PrefabInstance:
     - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
       propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1300179536}
+      objectReference: {fileID: 0}
     - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
       propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GrabCoins
@@ -3473,11 +3473,12 @@ GameObject:
   - component: {fileID: 1300179533}
   - component: {fileID: 1300179538}
   - component: {fileID: 1300179539}
-  - component: {fileID: 1300179535}
-  - component: {fileID: 1300179536}
   - component: {fileID: 1300179540}
   - component: {fileID: 1300179542}
+  - component: {fileID: 1300179544}
+  - component: {fileID: 1300179545}
   - component: {fileID: 1300179543}
+  - component: {fileID: 1300179546}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3553,40 +3554,6 @@ Transform:
   - {fileID: 349131373}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1300179535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300179532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 852160279be4eaf45b36300cb377ec90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hero: {fileID: 1300179536}
-  speed: 4
-  jumpPower: 20
-  damageJumpPower: 100
-  checkLayer: {fileID: 349131371}
---- !u!114 &1300179536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300179532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08a0bccd13682d44e8fb161e7a670d0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  score: 0
-  interactionRadius: 1
-  intreactionLayerMask:
-    serializedVersion: 2
-    m_Bits: 128
 --- !u!50 &1300179538
 Rigidbody2D:
   serializedVersion: 4
@@ -3676,8 +3643,9 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1300179535}
-        m_TargetAssemblyTypeName: HeroMovement, Assembly-CSharp
+      - m_Target: {fileID: 1300179544}
+        m_TargetAssemblyTypeName: Assets.Scripts.Player.MVP.Presenters.PlayerInputController,
+          Assembly-CSharp
         m_MethodName: OnHorisontalMovement
         m_Mode: 0
         m_Arguments:
@@ -3692,8 +3660,9 @@ MonoBehaviour:
     m_ActionName: Hero/HorisontalMovement[/Keyboard/a,/Keyboard/b]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1300179535}
-        m_TargetAssemblyTypeName: HeroMovement, Assembly-CSharp
+      - m_Target: {fileID: 1300179544}
+        m_TargetAssemblyTypeName: Assets.Scripts.Player.MVP.Presenters.PlayerInputController,
+          Assembly-CSharp
         m_MethodName: OnVerticalMovement
         m_Mode: 0
         m_Arguments:
@@ -3707,19 +3676,7 @@ MonoBehaviour:
     m_ActionId: bf900022-ec1e-45c6-81dc-6e84995a266f
     m_ActionName: Hero/VerticalMovement[/Keyboard/s,/Keyboard/w]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1300179535}
-        m_TargetAssemblyTypeName: Assets.Scripts.PlayerComponents.HeroMovement, Assembly-CSharp
-        m_MethodName: OnInteract
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 3659acaa-86fa-468e-b94d-1627b64044c8
     m_ActionName: Hero/Interact[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
@@ -3757,40 +3714,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 1300179532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bba1a9d6b0740c84eb38694198f0fb4d, type: 3}
+  m_Script: {fileID: 11500000, guid: 48d79bea2ab6d3e459a311d1c92865a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
-  onDamage:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1300179535}
-        m_TargetAssemblyTypeName: Assets.Scripts.PlayerComponents.HeroMovement, Assembly-CSharp
-        m_MethodName: TakeDamage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnDie:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1742691608}
-        m_TargetAssemblyTypeName: Assets.Scripts.Components.ManagerScenes, Assembly-CSharp
-        m_MethodName: RestartLevel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+--- !u!114 &1300179544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300179532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a17ab8460420b145be9850d307f703f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1300179545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300179532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9185288d1c6bdaf45ac427bfad42b6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jumpPower: 20
+  damageJumpPower: 0
+--- !u!114 &1300179546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300179532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff1d694f256a0ca47906caee75a94c74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 192
+  IsTouched: 0
 --- !u!1 &1564657683
 GameObject:
   m_ObjectHideFlags: 0
@@ -4330,7 +4299,7 @@ PrefabInstance:
     - target: {fileID: 5675609611148024695, guid: 8dfccb09490298c47995c8429dcd2318, type: 3}
       propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1300179543}
+      objectReference: {fileID: 0}
     - target: {fileID: 5675609611148024695, guid: 8dfccb09490298c47995c8429dcd2318, type: 3}
       propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ApplyDamage
@@ -4367,7 +4336,7 @@ PrefabInstance:
     - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
       propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1300179536}
+      objectReference: {fileID: 0}
     - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
       propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Assets.Scripts.Models.Hero, Assembly-CSharp
@@ -4520,7 +4489,7 @@ PrefabInstance:
     - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
       propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1300179536}
+      objectReference: {fileID: 0}
     - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
       propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Assets.Scripts.Models.Hero, Assembly-CSharp
@@ -4645,7 +4614,7 @@ PrefabInstance:
     - target: {fileID: 5675609611148024695, guid: 8dfccb09490298c47995c8429dcd2318, type: 3}
       propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1300179543}
+      objectReference: {fileID: 0}
     - target: {fileID: 5675609611148024695, guid: 8dfccb09490298c47995c8429dcd2318, type: 3}
       propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ApplyDamage
