@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using Zenject;
 
 namespace Assets.Scripts.Player.MVC.Controllers
 {
@@ -7,12 +8,8 @@ namespace Assets.Scripts.Player.MVC.Controllers
     {
         private float horizontalInput;
         private float verticalInput;
-        private PlayerMoveController moveController;
 
-        private void Awake()
-        {
-            moveController = GetComponent<PlayerMoveController>();
-        }
+        [Inject] private readonly PlayerMoveController moveController;
 
         void FixedUpdate()
         {

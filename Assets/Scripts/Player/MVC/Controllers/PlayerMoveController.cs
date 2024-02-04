@@ -2,6 +2,7 @@
 using Assets.Scripts.Player.MVC.Models;
 using Assets.Scripts.Player.MVC.Views;
 using UnityEngine;
+using Zenject;
 
 namespace Assets.Scripts.Player.MVC.Controllers
 {
@@ -17,13 +18,12 @@ namespace Assets.Scripts.Player.MVC.Controllers
         private Rigidbody2D _rigidbody2D;
         private CheckLayer checkLayer;
 
-        private PlayerModel playerModel;
-        private PlayerView playerView;
+        [Inject] private readonly PlayerModel playerModel;
+        [Inject] private readonly PlayerView playerView;
 
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
-            playerView = GetComponent<PlayerView>();
             checkLayer = GetComponent<CheckLayer>();
         }
 
