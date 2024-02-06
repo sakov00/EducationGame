@@ -24,7 +24,6 @@ namespace Assets.Scripts.Player.MVC.Controllers
         {
             health -= damageValue;
             onDamage?.Invoke();
-            playerView.SetHittedForAnimation();
             if (health <= 0)
             {
                 OnDie?.Invoke();

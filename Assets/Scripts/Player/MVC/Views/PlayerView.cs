@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Components;
+using UnityEngine;
 
 namespace Assets.Scripts.Player.MVC.Views
 {
@@ -12,6 +13,7 @@ namespace Assets.Scripts.Player.MVC.Views
         private Rigidbody2D _rigidbody2D;
         private Animator _animator;
         private SpriteRenderer _spriteRenderer;
+        private CheckLayer checkLayer;
 
 
         private void Awake()
@@ -19,6 +21,13 @@ namespace Assets.Scripts.Player.MVC.Views
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+            checkLayer = GetComponent<CheckLayer>();
+        }
+
+        private void FixedUpdate()
+        {
+            FlipHero();
+            ActiveAnimations();
         }
 
         public void Move(Vector2 vector)
@@ -34,24 +43,12 @@ namespace Assets.Scripts.Player.MVC.Views
                 _spriteRenderer.flipX = true;
         }
 
-        public void SetRunAnimation(bool isRunning)
+        private void ActiveAnimations()
         {
-            _animator.SetBool(IsRunForAnimation, isRunning);
-        }
-
-        public void SetGroundedAnimation(bool isGrounded)
-        {
-            _animator.SetBool(IsGroundForAnimation, isGrounded);
-        }
-
-        public void SetVerticalVelocityForAnimation()
-        {
+            _animator.SetBool(IsRunForAnimation, _rigidbody2D.velocity.x != 0);
+            _animator.SetBool(IsGroundForAnimation, checkLayer.IsTouched);
             _animator.SetFloat(VerticalVelocityForAnimation, _rigidbody2D.velocity.y);
-        }
-
-        public void SetHittedForAnimation()
-        {
-            _animator.SetTrigger(IsHittedForAnimation);
+            //_animator.SetTrigger(IsHittedForAnimation);
         }
     }
 }

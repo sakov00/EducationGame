@@ -21,10 +21,14 @@ namespace Assets.Scripts.Player.MVC.Controllers
         [Inject] private readonly PlayerModel playerModel;
         [Inject] private readonly PlayerView playerView;
 
+        [Inject] private readonly PlayerInputController playerInputController;
+
         private void Awake()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
             checkLayer = GetComponent<CheckLayer>();
+
+            playerInputController.OnMovementEvent += Move;
         }
 
         public void Move(float horizontalInput, float verticalInput)
@@ -33,15 +37,6 @@ namespace Assets.Scripts.Player.MVC.Controllers
             this.verticalInput = verticalInput;
             var vectorMove = new Vector2(CalculateHorizontalVelocity(), CalculateVerticalVelocity());
             playerView.Move(vectorMove);
-            playerView.FlipHero();
-            ActiveAnimations();
-        }
-
-        private void ActiveAnimations()
-        {
-            playerView.SetRunAnimation(horizontalInput != 0);
-            playerView.SetGroundedAnimation(checkLayer.IsTouched);
-            playerView.SetVerticalVelocityForAnimation();
         }
 
         private float CalculateHorizontalVelocity() 

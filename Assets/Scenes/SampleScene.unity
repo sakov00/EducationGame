@@ -1887,8 +1887,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6848c173eb0a6f54caeabde78e61fb41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerView: {fileID: 1300179543}
-  _playerInputController: {fileID: 1300179544}
+  _playerView: {fileID: 1300179548}
+  _playerInputController: {fileID: 1300179549}
   _playerMoveController: {fileID: 1300179547}
 --- !u!95 &784155343 stripped
 Animator:
@@ -1914,25 +1914,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
-      propertyPath: targetGameObject
-      value: 
-      objectReference: {fileID: 1300179532}
-    - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
-      propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
-      propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
-      propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GrabCoins
-      objectReference: {fileID: 0}
-    - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
-      propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Assets.Scripts.Models.Hero, Assembly-CSharp
+    - target: {fileID: 1590623440986379587, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+      propertyPath: TypeCoin
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8194831057034123640, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1978,7 +1962,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coins_4 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -1990128631716756478, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3522,9 +3507,10 @@ GameObject:
   - component: {fileID: 1300179539}
   - component: {fileID: 1300179540}
   - component: {fileID: 1300179542}
-  - component: {fileID: 1300179544}
+  - component: {fileID: 1300179549}
   - component: {fileID: 1300179547}
-  - component: {fileID: 1300179543}
+  - component: {fileID: 1300179550}
+  - component: {fileID: 1300179548}
   - component: {fileID: 1300179546}
   m_Layer: 0
   m_Name: Player
@@ -3690,8 +3676,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1300179544}
-        m_TargetAssemblyTypeName: Assets.Scripts.Player.MVP.Presenters.PlayerInputController,
+      - m_Target: {fileID: 1300179549}
+        m_TargetAssemblyTypeName: Assets.Scripts.Player.MVC.Controllers.PlayerInputController,
           Assembly-CSharp
         m_MethodName: OnHorisontalMovement
         m_Mode: 0
@@ -3707,8 +3693,8 @@ MonoBehaviour:
     m_ActionName: Hero/HorisontalMovement[/Keyboard/a,/Keyboard/b]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1300179544}
-        m_TargetAssemblyTypeName: Assets.Scripts.Player.MVP.Presenters.PlayerInputController,
+      - m_Target: {fileID: 1300179549}
+        m_TargetAssemblyTypeName: Assets.Scripts.Player.MVC.Controllers.PlayerInputController,
           Assembly-CSharp
         m_MethodName: OnVerticalMovement
         m_Mode: 0
@@ -3752,30 +3738,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1300179543
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300179532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48d79bea2ab6d3e459a311d1c92865a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1300179544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300179532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a17ab8460420b145be9850d307f703f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1300179546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3807,6 +3769,42 @@ MonoBehaviour:
   speed: 5
   jumpPower: 20
   damageJumpPower: 80
+--- !u!114 &1300179548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300179532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d79bea2ab6d3e459a311d1c92865a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1300179549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300179532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a17ab8460420b145be9850d307f703f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1300179550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300179532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d022be9517b4e48a83da1b56c5ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1501576849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3838,6 +3836,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 763205638}
+  - {fileID: 1755144441}
+  - {fileID: 1812729803}
   m_Father: {fileID: 1793698858}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1501576851
@@ -3855,7 +3855,8 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 763205639}
-  _installerPrefabs: []
+  _installerPrefabs:
+  - {fileID: 1812729804}
   _autoRun: 1
   OnPreInstall:
     m_PersistentCalls:
@@ -4312,17 +4313,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95efef69a47f62f49938a58a1c906236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1755144440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1755144441}
+  - component: {fileID: 1755144442}
+  m_Layer: 0
+  m_Name: EnterCollisionInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1755144441
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755144440}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1501576850}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1755144442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1755144440}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159ea438cca3ed74e8b18ebcdf02ea22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetGameObject: {fileID: 1300179532}
   unityEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1742691608}
-        m_TargetAssemblyTypeName: Assets.Scripts.Components.ManagerScenes, Assembly-CSharp
-        m_MethodName: RestartLevel
-        m_Mode: 1
+      - m_Target: {fileID: 1300179550}
+        m_TargetAssemblyTypeName: Assets.Scripts.Player.MVC.Controllers.PlayerGrabberController,
+          Assembly-CSharp
+        m_MethodName: GrabCoins
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 1300179532}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1590623440986379587, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Models.Coin, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4465,6 +4511,80 @@ Transform:
   - {fileID: 1501576850}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1812729802
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1812729803}
+  - component: {fileID: 1812729804}
+  m_Layer: 0
+  m_Name: EnterTriggerInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1812729803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812729802}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1501576850}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1812729804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812729802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbef1cc7cce2f6d4a96a14dfcc548ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetGameObject: {fileID: 1300179532}
+  unityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1300179550}
+        m_TargetAssemblyTypeName: Assets.Scripts.Player.MVC.Controllers.PlayerGrabberController,
+          Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Models.Coin, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 0
+      - m_Target: {fileID: 6418423958419078242, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+        m_TargetAssemblyTypeName: Assets.Scripts.Components.DestroyObjectComponent,
+          Assembly-CSharp
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1884867995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4473,18 +4593,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
-      propertyPath: targetGameObject
-      value: 
-      objectReference: {fileID: 1300179532}
-    - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
-      propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
-      propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Assets.Scripts.Models.Hero, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 8194831057034123640, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.5
@@ -4626,18 +4734,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
-      propertyPath: targetGameObject
-      value: 
-      objectReference: {fileID: 1300179532}
-    - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
-      propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5316560948492057343, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
-      propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Assets.Scripts.Models.Hero, Assembly-CSharp
-      objectReference: {fileID: 0}
     - target: {fileID: 8194831057034123640, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.5
@@ -4758,7 +4854,7 @@ PrefabInstance:
     - target: {fileID: 5675609611148024695, guid: 8dfccb09490298c47995c8429dcd2318, type: 3}
       propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1300179532}
     - target: {fileID: 5675609611148024695, guid: 8dfccb09490298c47995c8429dcd2318, type: 3}
       propertyPath: unityEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ApplyDamage

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.InputSystem;
 using Zenject;
 
@@ -9,18 +10,21 @@ namespace Assets.Scripts.Player.MVC.Controllers
         private float horizontalInput;
         private float verticalInput;
 
-        [Inject] private readonly PlayerMoveController moveController;
+        public event Action<float, float> OnMovementEvent;
 
-        void FixedUpdate()
+        private void FixedUpdate()
         {
-            moveController.Move(horizontalInput, verticalInput);
+            OnMovementEvent.Invoke(horizontalInput, verticalInput);
         }
 
-        public void OnHorisontalMovement(InputAction.CallbackContext context) =>
+        public void OnHorisontalMovement(InputAction.CallbackContext context)
+        {
             horizontalInput = context.ReadValue<float>();
-
-        public void OnVerticalMovement(InputAction.CallbackContext context) =>
+        }
+        public void OnVerticalMovement(InputAction.CallbackContext context)
+        {  
             verticalInput = context.ReadValue<float>();
+        }
 
         //public void OnInteract(InputAction.CallbackContext context)
             //interactInput.OnInteract(context);

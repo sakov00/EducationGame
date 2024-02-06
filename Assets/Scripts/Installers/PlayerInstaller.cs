@@ -15,8 +15,8 @@ namespace Assets.Scripts.Installers
         {
             Container.Bind<PlayerModel>().AsSingle();
             Container.Bind<PlayerView>().FromInstance(_playerView).AsSingle();
-            Container.Bind<PlayerMoveController>().FromInstance(_playerMoveController).AsSingle();
             Container.Bind<PlayerInputController>().FromInstance(_playerInputController).AsSingle();
+            Container.Bind<PlayerMoveController>().FromInstance(_playerMoveController).AsSingle();
         }
     }
 }

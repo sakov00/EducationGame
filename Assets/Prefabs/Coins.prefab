@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 8194831057034123640}
   - component: {fileID: 2293177996082301287}
   - component: {fileID: 7612906801067863667}
-  - component: {fileID: 1590623440986379587}
   - component: {fileID: -2279691773286897042}
-  - component: {fileID: 5316560948492057343}
+  - component: {fileID: 1590623440986379587}
+  - component: {fileID: 3278511225012979148}
+  - component: {fileID: 6418423958419078242}
   m_Layer: 0
-  m_Name: Coins_4
+  m_Name: Coins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,19 +124,6 @@ CircleCollider2D:
   m_Offset: {x: 0.018, y: 0.018}
   serializedVersion: 2
   m_Radius: 0.18
---- !u!114 &1590623440986379587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9135762266676994651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f54a0d6227e829d4c9d9431c7483256c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TypeCoin: 10
 --- !u!114 &-2279691773286897042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,7 +146,20 @@ MonoBehaviour:
   onCompleted:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5316560948492057343
+--- !u!114 &1590623440986379587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9135762266676994651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f54a0d6227e829d4c9d9431c7483256c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TypeCoin: 10
+--- !u!114 &3278511225012979148
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,19 +171,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95efef69a47f62f49938a58a1c906236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetGameObject: {fileID: 0}
-  unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: HeroGraber, Assembly-CSharp
-        m_MethodName: GrabCoins
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1590623440986379587}
-          m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Models.Coin, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+--- !u!114 &6418423958419078242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9135762266676994651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2a8f63ae5745af4cbf49c0ea5dfcf0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 0}
