@@ -3873,6 +3873,63 @@ MonoBehaviour:
   _parentNewObjectsUnderSceneContext: 0
   _contractNames: []
   _parentContractNames: []
+--- !u!1001 &1522657755
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8194831057034123640, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.49058
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194831057034123640, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.388942
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194831057034123640, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194831057034123640, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194831057034123640, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194831057034123640, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194831057034123640, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194831057034123640, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194831057034123640, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194831057034123640, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9135762266676994651, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+      propertyPath: m_Name
+      value: Coins
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
 --- !u!1 &1564657683
 GameObject:
   m_ObjectHideFlags: 0
@@ -4562,21 +4619,21 @@ MonoBehaviour:
       - m_Target: {fileID: 1300179550}
         m_TargetAssemblyTypeName: Assets.Scripts.Player.MVC.Controllers.PlayerGrabberController,
           Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: GrabCoins
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Models.Coin, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
       - m_Target: {fileID: 6418423958419078242, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
         m_TargetAssemblyTypeName: Assets.Scripts.Components.DestroyObjectComponent,
           Assembly-CSharp
         m_MethodName: DestroyObject
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5036,6 +5093,7 @@ SceneRoots:
   - {fileID: 857225380949187441}
   - {fileID: 833484775}
   - {fileID: 1884867995}
+  - {fileID: 1522657755}
   - {fileID: 2861122653770640221}
   - {fileID: 1773821229}
   - {fileID: 1601829071}

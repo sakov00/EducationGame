@@ -8,13 +8,13 @@ namespace Assets.Scripts.Components
     public class EnterTrigger : MonoBehaviour
     {
         [Inject] private GameObject targetGameObject;
-        [Inject] private UnityEvent unityEvent;
+        [Inject] private UnityEvent<GameObject> unityEvent;
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (targetGameObject == collision.gameObject && unityEvent != null)
             {
-                unityEvent.Invoke();
+                unityEvent.Invoke(gameObject);
             }
         }
     }

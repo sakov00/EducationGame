@@ -4,17 +4,11 @@ namespace Assets.Scripts.Components
 {
     public class DestroyObjectComponent : MonoBehaviour
     {
-        [SerializeField] private GameObject targetObject;
-
-        public void DestroyObject()
+        public void DestroyObject(GameObject targetObject)
         {
             if (targetObject != null)
             {
                 Destroy(targetObject);
-            }
-            else
-            {
-                Destroy(gameObject);
             }
         }
     }
