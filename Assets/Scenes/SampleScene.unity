@@ -1887,9 +1887,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6848c173eb0a6f54caeabde78e61fb41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerModel: {fileID: 1300179551}
   _playerView: {fileID: 1300179548}
-  _playerInputController: {fileID: 1300179549}
-  _playerMoveController: {fileID: 1300179547}
+  playerInputController: {fileID: 1300179554}
+  playerMoveController: {fileID: 1300179553}
+  playerInteractableController: {fileID: 1300179555}
+  playerContactableController: {fileID: 1300179556}
 --- !u!95 &784155343 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: -9067450957671186299, guid: 8f70bfb7516ecdc4bbf5b03b10da5e42, type: 3}
@@ -3507,9 +3510,11 @@ GameObject:
   - component: {fileID: 1300179539}
   - component: {fileID: 1300179540}
   - component: {fileID: 1300179542}
-  - component: {fileID: 1300179549}
-  - component: {fileID: 1300179547}
-  - component: {fileID: 1300179550}
+  - component: {fileID: 1300179556}
+  - component: {fileID: 1300179555}
+  - component: {fileID: 1300179554}
+  - component: {fileID: 1300179553}
+  - component: {fileID: 1300179551}
   - component: {fileID: 1300179548}
   - component: {fileID: 1300179546}
   m_Layer: 0
@@ -3676,7 +3681,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1300179549}
+      - m_Target: {fileID: 1300179554}
         m_TargetAssemblyTypeName: Assets.Scripts.Player.MVC.Controllers.PlayerInputController,
           Assembly-CSharp
         m_MethodName: OnHorisontalMovement
@@ -3693,7 +3698,7 @@ MonoBehaviour:
     m_ActionName: Hero/HorisontalMovement[/Keyboard/a,/Keyboard/b]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1300179549}
+      - m_Target: {fileID: 1300179554}
         m_TargetAssemblyTypeName: Assets.Scripts.Player.MVC.Controllers.PlayerInputController,
           Assembly-CSharp
         m_MethodName: OnVerticalMovement
@@ -3754,21 +3759,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 192
   IsTouched: 0
---- !u!114 &1300179547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300179532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9185288d1c6bdaf45ac427bfad42b6c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  jumpPower: 20
-  damageJumpPower: 80
 --- !u!114 &1300179548
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3781,7 +3771,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48d79bea2ab6d3e459a311d1c92865a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1300179549
+--- !u!114 &1300179551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300179532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0699a68cfec36043954663d8354076a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  score: 0
+  speed: 5
+  jumpPower: 20
+  damageJumpPower: 80
+--- !u!114 &1300179553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300179532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9185288d1c6bdaf45ac427bfad42b6c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1300179554
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3793,7 +3812,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a17ab8460420b145be9850d307f703f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1300179550
+--- !u!114 &1300179555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3803,6 +3822,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87d022be9517b4e48a83da1b56c5ce5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1300179556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1300179532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ebbe55ee8c83244b84d13b5479df3aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1501576849
@@ -3836,8 +3867,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 763205638}
-  - {fileID: 1755144441}
-  - {fileID: 1812729803}
+  - {fileID: 2103331336}
   m_Father: {fileID: 1793698858}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1501576851
@@ -3855,8 +3885,8 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 763205639}
-  _installerPrefabs:
-  - {fileID: 1812729804}
+  - {fileID: 2103331337}
+  _installerPrefabs: []
   _autoRun: 1
   OnPreInstall:
     m_PersistentCalls:
@@ -4370,67 +4400,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95efef69a47f62f49938a58a1c906236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1755144440
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1755144441}
-  - component: {fileID: 1755144442}
-  m_Layer: 0
-  m_Name: EnterCollisionInstaller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1755144441
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755144440}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1501576850}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1755144442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1755144440}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 159ea438cca3ed74e8b18ebcdf02ea22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetGameObject: {fileID: 1300179532}
+  targetGameObject: {fileID: 0}
   unityEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1300179550}
-        m_TargetAssemblyTypeName: Assets.Scripts.Player.MVC.Controllers.PlayerGrabberController,
-          Assembly-CSharp
-        m_MethodName: GrabCoins
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1590623440986379587, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
-          m_ObjectArgumentAssemblyTypeName: Assets.Scripts.Models.Coin, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+    m_CallsDirty: 1
 --- !u!1001 &1773821229
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4568,80 +4542,6 @@ Transform:
   - {fileID: 1501576850}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1812729802
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1812729803}
-  - component: {fileID: 1812729804}
-  m_Layer: 0
-  m_Name: EnterTriggerInstaller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1812729803
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1812729802}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1501576850}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1812729804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1812729802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbef1cc7cce2f6d4a96a14dfcc548ab0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetGameObject: {fileID: 1300179532}
-  unityEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1300179550}
-        m_TargetAssemblyTypeName: Assets.Scripts.Player.MVC.Controllers.PlayerGrabberController,
-          Assembly-CSharp
-        m_MethodName: GrabCoins
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6418423958419078242, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
-        m_TargetAssemblyTypeName: Assets.Scripts.Components.DestroyObjectComponent,
-          Assembly-CSharp
-        m_MethodName: DestroyObject
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1001 &1884867995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4699,6 +4599,82 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd70de95d52ba2e4f9ce24fa1657e43f, type: 3}
+--- !u!1 &2103331335
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2103331336}
+  - component: {fileID: 2103331337}
+  m_Layer: 0
+  m_Name: ComponentsInstaller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2103331336
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103331335}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1501576850}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2103331337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103331335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbef1cc7cce2f6d4a96a14dfcc548ab0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactableUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1300179555}
+        m_TargetAssemblyTypeName: Assets.Scripts.Player.MVC.Controllers.PlayerInteractableController,
+          Assembly-CSharp
+        m_MethodName: InteractWithObject
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  contactableUnityEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1300179556}
+        m_TargetAssemblyTypeName: Assets.Scripts.Player.MVC.Controllers.PlayerContactableController,
+          Assembly-CSharp
+        m_MethodName: ConcatWithObject
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2110413047
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,15 +1,24 @@
-﻿using UnityEngine;
+﻿using Assets.Scripts.Interfaces;
+using Assets.Scripts.Player.MVC.Models;
+using UnityEngine;
 using UnityEngine.Events;
+using Zenject;
 
 namespace Assets.Scripts.Components
 {
     public class InteractableComponent : MonoBehaviour
     {
-        [SerializeField] private UnityEvent action;
+        [Inject] private PlayerModel playerModel;
+        [Inject] private UnityEvent<IInteractable> unityEvent;
 
-        public void Interact()
+        private void OnTriggerEnter2D(Collider2D collision)
         {
-            action?.Invoke();
+            if (playerModel.gameObject == collision.gameObject && unityEvent != null)
+            {
+                var interactObject = gameObject.GetComponent<IInteractable>();
+                unityEvent.Invoke(interactObject);
+                interactObject.Interact();
+            }
         }
     }
 }

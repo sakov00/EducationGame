@@ -1,14 +1,22 @@
+using Assets.Scripts.Interfaces;
 using UnityEngine;
 
 namespace Assets.Scripts.Components
 {
     public class DestroyObjectComponent : MonoBehaviour
     {
-        public void DestroyObject(GameObject targetObject)
+        public void DestroyObject(GameObject gameObject)
         {
-            if (targetObject != null)
+            if (gameObject != null)
             {
-                Destroy(targetObject);
+                Destroy(gameObject);
+            }
+        }
+
+        public void DestroyObject(IInteractable interactObject)
+        {
+            if (interactObject != null)
+            {
             }
         }
     }

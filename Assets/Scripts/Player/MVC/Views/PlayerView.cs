@@ -27,7 +27,7 @@ namespace Assets.Scripts.Player.MVC.Views
         private void FixedUpdate()
         {
             FlipHero();
-            ActiveAnimations();
+            AlwaysCheckAnimations();
         }
 
         public void Move(Vector2 vector)
@@ -43,12 +43,17 @@ namespace Assets.Scripts.Player.MVC.Views
                 _spriteRenderer.flipX = true;
         }
 
-        private void ActiveAnimations()
+        private void AlwaysCheckAnimations()
         {
             _animator.SetBool(IsRunForAnimation, _rigidbody2D.velocity.x != 0);
             _animator.SetBool(IsGroundForAnimation, checkLayer.IsTouched);
             _animator.SetFloat(VerticalVelocityForAnimation, _rigidbody2D.velocity.y);
-            //_animator.SetTrigger(IsHittedForAnimation);
         }
+
+        public void CallHittedAnimation()
+        {
+            _animator.SetTrigger(IsHittedForAnimation);
+        }
+        
     }
 }

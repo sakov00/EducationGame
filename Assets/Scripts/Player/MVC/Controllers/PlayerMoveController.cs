@@ -8,10 +8,6 @@ namespace Assets.Scripts.Player.MVC.Controllers
 {
     public class PlayerMoveController : MonoBehaviour
     {
-        [SerializeField] private float speed;
-        [SerializeField] private float jumpPower;
-        [SerializeField] private float damageJumpPower;
-
         private float horizontalInput;
         private float verticalInput;
         private bool allowDoubleJump;
@@ -20,7 +16,6 @@ namespace Assets.Scripts.Player.MVC.Controllers
 
         [Inject] private readonly PlayerModel playerModel;
         [Inject] private readonly PlayerView playerView;
-
         [Inject] private readonly PlayerInputController playerInputController;
 
         private void Awake()
@@ -41,7 +36,7 @@ namespace Assets.Scripts.Player.MVC.Controllers
 
         private float CalculateHorizontalVelocity() 
         {
-            return horizontalInput * speed;
+            return horizontalInput * playerModel.speed;
         }
 
         private float CalculateVerticalVelocity()
@@ -70,14 +65,21 @@ namespace Assets.Scripts.Player.MVC.Controllers
 
             if (checkLayer.IsTouched)
             {
-                verticalY += jumpPower;
+                verticalY += playerModel.jumpPower;
             }
             else if (allowDoubleJump)
             {
-                verticalY = jumpPower;
+                verticalY = playerModel.jumpPower;
                 allowDoubleJump = false;
             }
             return verticalY;
+        }
+
+        public void GetDamage()
+        {
+            var vectorMove = new Vector2(_rigidbody2D.velocity.y, playerModel.damageJumpPower);
+            playerView.Move(vectorMove);
+            playerView.CallHittedAnimation();
         }
     }
 }
