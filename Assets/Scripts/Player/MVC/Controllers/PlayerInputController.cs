@@ -11,22 +11,33 @@ namespace Assets.Scripts.Player.MVC.Controllers
         private float verticalInput;
 
         public event Action<float, float> OnMovementEvent;
+        public event Action OnInteractEvent;
 
         private void FixedUpdate()
         {
             OnMovementEvent.Invoke(horizontalInput, verticalInput);
         }
 
-        public void OnHorisontalMovement(InputAction.CallbackContext context)
+        private void OnHorisontalMovement(InputAction.CallbackContext context)
         {
             horizontalInput = context.ReadValue<float>();
         }
-        public void OnVerticalMovement(InputAction.CallbackContext context)
+
+        private void OnVerticalMovement(InputAction.CallbackContext context)
         {  
             verticalInput = context.ReadValue<float>();
         }
 
-        //public void OnInteract(InputAction.CallbackContext context)
-            //interactInput.OnInteract(context);
+        private void OnInteract(InputAction.CallbackContext context)
+        {
+            if(context.canceled)
+                OnInteractEvent.Invoke();
+        }
+
+        public void AddListenerInteractEvent(Action action)
+        {
+            if(OnInteractEvent == null)
+                OnInteractEvent += action;
+        }
     }
 }

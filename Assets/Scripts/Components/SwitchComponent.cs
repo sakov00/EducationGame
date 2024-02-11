@@ -13,11 +13,5 @@ namespace Assets.Scripts.Components
             state = !state;
             animator.SetBool(animationKey, state);
         }
-
-        [ContextMenu("Switch")]
-        public void SwitchIt()
-        {
-            Switch();
-        }
     }
 }

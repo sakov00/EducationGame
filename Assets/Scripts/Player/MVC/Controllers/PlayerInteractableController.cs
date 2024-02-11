@@ -1,7 +1,7 @@
-﻿using Assets.Scripts.Interfaces;
+﻿using Assets.Scripts.Components;
+using Assets.Scripts.Interfaces;
 using Assets.Scripts.Models;
 using Assets.Scripts.Player.MVC.Models;
-using Assets.Scripts.Player.MVC.Views;
 using UnityEngine;
 using Zenject;
 
@@ -17,9 +17,9 @@ namespace Assets.Scripts.Player.MVC.Controllers
                 GrabCoins(coin);
         }
 
-        public void GrabCoins(Coin currentCoin)
+        public void GrabCoins(Coin coin)
         {
-            playerModel.score += (int)currentCoin.TypeCoin;
+            playerModel.score += (int)coin.TypeCoin;
             Debug.Log(playerModel.score);
         }
     }

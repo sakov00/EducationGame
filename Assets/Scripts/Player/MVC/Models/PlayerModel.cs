@@ -7,6 +7,7 @@ namespace Assets.Scripts.Player.MVC.Models
     {
         public int health;
         public int score;
+
         public float speed;
         public float jumpPower;
         public float damageJumpPower;
